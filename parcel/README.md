@@ -9,6 +9,7 @@
 - [ ] [Tests](#tests)
 - [ ] [Code Coverage](#code-coverage)
 - [ ] [Coded UI Tests](#coded-ui-tests)
+- [ ] [Sass][#sass]
 
 ## [Visual Studio Code](https://code.visualstudio.com/) Settings
 
@@ -338,3 +339,14 @@ Add `selenium` to the [`package.json`](./package.json) `scripts`:
 
 > [!IMPORTANT]
 > Selenium needs some additional configuration, like webdriver installation and system configuration, see [Getting Started with Selenium in NodeJ, What is Selenium, What is Automated Testing.](https://medium.com/@nsidana123/getting-started-with-selenium-in-nodej-what-is-selenium-what-is-automated-testing-80c8cfd3b08f).
+
+## [Sass](https://sass-lang.com/)
+
+[Sass](https://sass-lang.com/) is supported without additional configuration. Add a 
+[scss](./scss/) and import the [main.scss](./scss/main.scss) in the [index.html](./src/index.html):
+
+'''html
+<link rel="stylesheet" href="../scss/main.scss" />
+'''
+
+The package [@parcel/transformer-sass](https://www.npmjs.com/package/@parcel/transformer-sass) is installed at the next build by default.
