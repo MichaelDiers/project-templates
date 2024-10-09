@@ -6,7 +6,8 @@
     "lint": "npx eslint src test --fix",
     "test": "cross-env TS_NODE_PROJECT='./tsconfig.test.json' mocha",
     "coverage": "cross-env TS_NODE_PROJECT='./tsconfig.test.json' nyc mocha",
-    "selenium": "cross-env TS_NODE_PROJECT='./tsconfig.test.json' nyc mocha --extension=e2e.tsx"
+    "selenium": "cross-env TS_NODE_PROJECT='./tsconfig.test.json' nyc mocha --extension=e2e.tsx",
+    "stylelint": "npx stylelint scss/**/*.scss"
   },
   "devDependencies": {
     "@istanbuljs/nyc-config-typescript": "^1.0.2",
@@ -39,8 +40,11 @@
     "mocha": "^10.7.3",
     "nyc": "^17.1.0",
     "parcel": "^2.12.0",
+    "postcss": "^8.4.47",
     "process": "^0.11.10",
     "selenium-webdriver": "^4.25.0",
+    "stylelint": "^16.9.0",
+    "stylelint-config-sass-guidelines": "^12.1.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.6.3"
   },

@@ -9,7 +9,8 @@
 - [ ] [Tests](#tests)
 - [ ] [Code Coverage](#code-coverage)
 - [ ] [Coded UI Tests](#coded-ui-tests)
-- [ ] [Sass][#sass]
+- [ ] [Sass](#sass)
+- [ ] [Stylelint](#stylelint)
 
 ## [Visual Studio Code](https://code.visualstudio.com/) Settings
 
@@ -350,3 +351,20 @@ Add `selenium` to the [`package.json`](./package.json) `scripts`:
 '''
 
 The package [@parcel/transformer-sass](https://www.npmjs.com/package/@parcel/transformer-sass) is installed at the next build by default.
+
+## [Stylelint](https://www.npmjs.com/package/stylelint)
+
+[Stylelint](https://www.npmjs.com/package/stylelint) is used for linting [scss](https://sass-lang.com/)-files and the rule set as defined at [Sass Guidelines](https://sass-guidelin.es/).
+
+```
+npm i -D stylelint postcss stylelint-config-sass-guidelines
+```
+
+Add `stylelint` to the [`package.json`](./package.json) `scripts`:
+
+```json
+"stylelint": "npx stylelint scss/**/*.scss"
+```
+
+Add the [Stylelint](https://www.npmjs.com/package/stylelint) configuration file 
+[`.stylelintrc`](./.stylelintrc).
