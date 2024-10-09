@@ -7,6 +7,7 @@
 - [] [.gitignore](#gitignore)
 - [] [ESLint](#eslint)
 - [] [Tests](#tests)
+- [] [Code Coverage](#code-coverage)
 
 ## [Visual Studio Code](https://code.visualstudio.com/) Settings
 
@@ -140,6 +141,7 @@ Add files and folders that are not checked in to the [`.gitignore`](./.gitignore
 dist
 node_modules
 .parcel-cache
+.nyc_output
 ```
 
 ## [ESLint](https://eslint.org/)
@@ -280,4 +282,36 @@ Add `test` to the [`package.json`](./package.json) `scripts`:
 
 ```json
 "test": "cross-env TS_NODE_PROJECT='./tsconfig.test.json' mocha"
+```
+
+## Code Coverage
+
+[Istanbul](https://istanbul.js.org/) is used for the code coverage analysis.
+
+```bash
+npm i -D nyc @istanbuljs/nyc-config-typescript
+```
+
+Add the coverage configuration file [`.nycrc`](./.nycrc):
+
+```json
+{
+  "extends": "@istanbuljs/nyc-config-typescript",
+  "all": true,
+  "check-coverage": true,
+  "exclude": [
+    "**/*.spec.ts",
+    "**/*.spec.tsx"
+  ],
+  "extension": [
+    ".ts",
+    ".tsx"
+  ]
+}
+```
+
+Add `coverage` to the [`package.json`](./package.json) `scripts`:
+
+```json
+"coverage": "cross-env TS_NODE_PROJECT='./tsconfig.test.json' nyc mocha"
 ```
