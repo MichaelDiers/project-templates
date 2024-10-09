@@ -1,13 +1,14 @@
 # [Parcel](https://parceljs.org/) Project Setup
 
 - [x] [Visual Studio Code Settings](#visual-studio-code-settings)
-- [] [TypeScript](#typescript)
-- [] [React](#react)
-- [] [Parcel](#parcel)
-- [] [.gitignore](#gitignore)
-- [] [ESLint](#eslint)
-- [] [Tests](#tests)
-- [] [Code Coverage](#code-coverage)
+- [ ] [TypeScript](#typescript)
+- [ ] [React](#react)
+- [ ] [Parcel](#parcel)
+- [ ] [.gitignore](#gitignore)
+- [ ] [ESLint](#eslint)
+- [ ] [Tests](#tests)
+- [ ] [Code Coverage](#code-coverage)
+- [ ] [Coded UI Tests](#coded-ui-tests)
 
 ## [Visual Studio Code](https://code.visualstudio.com/) Settings
 
@@ -181,7 +182,8 @@ Add the [`.eslintrc`](./.eslintrc) configuration file for [ESLint](https://eslin
     {
       "files": [
         "*.spec.ts",
-        "*.spec.tsx"
+        "*.spec.tsx",
+        "*.e2e.tsx"
       ],
       "rules": {
         "@typescript-eslint/no-unused-expressions": "off"
@@ -301,7 +303,8 @@ Add the coverage configuration file [`.nycrc`](./.nycrc):
   "check-coverage": true,
   "exclude": [
     "**/*.spec.ts",
-    "**/*.spec.tsx"
+    "**/*.spec.tsx",
+    "test"
   ],
   "extension": [
     ".ts",
@@ -315,3 +318,23 @@ Add `coverage` to the [`package.json`](./package.json) `scripts`:
 ```json
 "coverage": "cross-env TS_NODE_PROJECT='./tsconfig.test.json' nyc mocha"
 ```
+
+## Coded UI Tests
+
+[Selenium](https://www.selenium.dev/) is used for coded ui tests.
+
+```bash
+npm i -D selenium-webdriver @types/selenium-webdriver
+```
+
+Create a folder `test/e2e` and add the files [config.ts](test/e2e/config.ts), 
+[selenium.ts](test/e2e/selenium.ts) and [availability.e2e.tsx](test/e2e/availability.e2e.tsx) to the created new folder.
+
+Add `selenium` to the [`package.json`](./package.json) `scripts`:
+
+```json
+"selenium": "cross-env TS_NODE_PROJECT='./tsconfig.test.json' nyc mocha --extension=e2e.tsx"
+```
+
+> [!IMPORTANT]
+> Selenium needs some additional configuration, like webdriver installation and system configuration, see [Getting Started with Selenium in NodeJ, What is Selenium, What is Automated Testing.](https://medium.com/@nsidana123/getting-started-with-selenium-in-nodej-what-is-selenium-what-is-automated-testing-80c8cfd3b08f).
