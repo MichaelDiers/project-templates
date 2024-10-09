@@ -11,7 +11,7 @@
 
 ## [Visual Studio Code](https://code.visualstudio.com/) Settings
 
-[Workspace settings](https://code.visualstudio.com/docs/getstarted/settings) added from [here](../vscode)
+[Workspace settings](https://code.visualstudio.com/docs/getstarted/settings) are added from [here](../vscode).
 
 ## [TypeScript](https://www.typescriptlang.org/)
 
@@ -19,7 +19,7 @@
 npm i -D typescript
 ```
 
-Add the TypeScript (configuration)[https://www.typescriptlang.org/docs/handbook/tsconfig-json.html] file (`tsconfig.json`)[./tsconfig.json]:
+Add the TypeScript [configuration](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html) file [`tsconfig.json`](./tsconfig.json):
 
 ```json
 {
