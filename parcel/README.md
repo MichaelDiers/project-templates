@@ -3,6 +3,7 @@
 - [x] [Visual Studio Code Settings](#visual-studio-code-settings)
 - [] [Parcel](#parcel)
 - [] [TypeScript](#typescript)
+- [] [React](#react)
 
 ## [Visual Studio Code](https://code.visualstudio.com/) Settings
 
@@ -43,4 +44,11 @@ Add the TypeScript (configuration)[https://www.typescriptlang.org/docs/handbook/
     "test"
   ]
 }
+```
+
+## [React](https://react.dev/)
+
+```bash
+npm i react react-dom react-router-dom
+npm i -D @types/react @types/react-dom @types/react-router-dom
 ```
