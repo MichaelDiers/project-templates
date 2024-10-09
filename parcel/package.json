@@ -3,16 +3,25 @@
   "scripts": {
     "start": "parcel",
     "build": "parcel build",
-    "lint": "npx eslint src test --fix"
+    "lint": "npx eslint src test --fix",
+    "test": "cross-env TS_NODE_PROJECT='./tsconfig.test.json' mocha"
   },
   "devDependencies": {
     "@parcel/config-default": "^2.12.0",
     "@parcel/transformer-typescript-tsc": "^2.12.0",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/react": "^16.0.1",
+    "@types/chai": "^4.3.20",
+    "@types/jsdom": "^21.1.7",
+    "@types/jsdom-global": "^3.0.7",
+    "@types/mocha": "^10.0.9",
     "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.0",
     "@types/react-router-dom": "^5.3.3",
     "@typescript-eslint/eslint-plugin": "^7.18.0",
     "@typescript-eslint/parser": "^7.18.0",
+    "chai": "^4.5.0",
+    "cross-env": "^7.0.3",
     "eslint": "^8.2.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-typescript": "^18.0.0",
@@ -20,8 +29,12 @@
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
+    "jsdom": "^25.0.1",
+    "jsdom-global": "^3.0.2",
+    "mocha": "^10.7.3",
     "parcel": "^2.12.0",
     "process": "^0.11.10",
+    "ts-node": "^10.9.2",
     "typescript": "^5.6.3"
   },
   "dependencies": {

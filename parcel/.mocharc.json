@@ -1,0 +1,13 @@
+{
+  "env": {
+    "mocha": true
+  },
+  "extension": [
+    "ts",
+    "tsx"
+  ],
+  "require": [
+    "ts-node/register"
+  ],
+  "recursive": true
+}

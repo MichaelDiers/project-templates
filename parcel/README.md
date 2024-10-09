@@ -6,6 +6,7 @@
 - [] [Parcel](#parcel)
 - [] [.gitignore](#gitignore)
 - [] [ESLint](#eslint)
+- [] [Tests](#tests)
 
 ## [Visual Studio Code](https://code.visualstudio.com/) Settings
 
@@ -197,3 +198,86 @@ Add `lint` to the [`package.json`](./package.json) `scripts`:
 
 > [!Warning]
 > The [npm](https://www.npmjs.com) package [`eslint-config-airbnb-typescript`](https://github.com/iamturns/eslint-config-airbnb-typescript) is not supported anymore and needs to be replaced.
+
+## Tests
+
+A combination of [Mocha](https://mochajs.org/), [Chai](https://www.chaijs.com/) and the [React Testing Library](https://github.com/testing-library/react-testing-library).
+
+```bash
+npm i -D @types/mocha mocha ts-node "@types/chai@^4.3.16" "chai@4.5.0"
+npm i -D @testing-library/react @testing-library/dom
+npm i -D jsdom @types/jsdom
+npm i -D jsdom-global @types/jsdom-global
+npm i -D cross-env
+npm i -D ts-node
+```
+
+Add a specific [tsconfig.test.json](./tsconfig.test.json) used by [ts-node](https://github.com/TypeStrong/ts-node):
+
+```json
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "module": "CommonJS"
+  }
+}
+```
+Add the mocha configuration file [.mocharc.json](./.mocharc.json):
+
+```json
+{
+  "env": {
+    "mocha": true
+  },
+  "extension": [
+    "ts",
+    "tsx"
+  ],
+  "require": [
+    "ts-node/register"
+  ],
+  "recursive": true
+}
+```
+
+Add test file [`App.spec.tsx`](./test/App.spec.tsx) in the `test` folder:
+
+```js
+import ReactDOMClient from 'react-dom/client';
+import { expect } from 'chai';
+import { act } from '@testing-library/react';
+import jsdomGlobal from 'jsdom-global';
+import React from 'react';
+import { App } from '../src/App';
+
+describe('App tests', function appTests() {
+  this.timeout(5000);
+
+  before(function before() {
+    this.jsdom = jsdomGlobal();
+  });
+
+  after(function after() {
+    this.jsdom();
+  });
+
+  it('can render App and "Hello World!" is displayed', async () => {
+    const container = document.createElement('div');
+    document.body.appendChild(container);
+
+    await act(async () => {
+      ReactDOMClient.createRoot(container).render(<App />);
+    });
+
+    const h1 = container.querySelector('h1');
+    expect(h1).not.be.null;
+    expect(h1!.textContent).to.equal('Hello World!');
+  });
+});
+```
+
+Add `test` to the [`package.json`](./package.json) `scripts`:
+
+```json
+"test": "cross-env TS_NODE_PROJECT='./tsconfig.test.json' mocha"
+```
