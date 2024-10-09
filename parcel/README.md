@@ -5,6 +5,7 @@
 - [] [React](#react)
 - [] [Parcel](#parcel)
 - [] [.gitignore](#gitignore)
+- [] [ESLint](#eslint)
 
 ## [Visual Studio Code](https://code.visualstudio.com/) Settings
 
@@ -139,3 +140,60 @@ dist
 node_modules
 .parcel-cache
 ```
+
+## [ESLint](https://eslint.org/)
+
+[ESLint](https://eslint.org/) uses the Airbnb [configuration](eslint-config-airbnb-typescript).
+
+
+```bash
+npx install-peerdeps --dev eslint-config-airbnb
+npm i -D eslint-config-airbnb-typescript@latest @typescript-eslint/eslint-plugin@^7.18.0 @typescript-eslint/parser@^7.18.0
+```
+
+Add the [`.eslintrc`](./.eslintrc) configuration file for [ESLint](https://eslint.org/docs/latest/use/configure/configuration-files-deprecated):
+
+```json
+{
+  "extends": [
+    "airbnb",
+    "airbnb-typescript"
+  ],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "rules": {
+    "jsx-quotes": [
+      "error",
+      "prefer-single"
+    ],
+    "import/prefer-default-export": "off",
+    "jsx-a11y/label-has-associated-control": [
+      2,
+      {
+        "assert": "htmlFor"
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "*.spec.ts",
+        "*.spec.tsx"
+      ],
+      "rules": {
+        "@typescript-eslint/no-unused-expressions": "off"
+      }
+    }
+  ]
+}
+```
+
+Add `lint` to the [`package.json`](./package.json) `scripts`:
+
+```json
+"lint": "npx eslint src test --fix"
+```
+
+> [!Warning]
+> The [npm](https://www.npmjs.com) package [`eslint-config-airbnb-typescript`](https://github.com/iamturns/eslint-config-airbnb-typescript) is not supported anymore and needs to be replaced.
