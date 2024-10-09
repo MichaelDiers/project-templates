@@ -54,8 +54,7 @@ npm i -D @types/react @types/react-dom @types/react-router-dom
 ## [Parcel](https://parceljs.org)
 
 ```bash
-npm i -D parcel
-npm i -D @parcel/config-default @parcel/transformer-typescript-tsc
+npm i -D parcel @parcel/config-default @parcel/transformer-typescript-tsc
 ```
 
 Add the Parcel [configuration](https://parceljs.org/plugin-system/configuration/) file [`.parcelrc`](./.parcelrc):
@@ -90,7 +89,7 @@ Add the [`index.html`](./src/index.html) in the [`src`](./src/) folder:
 </html>
 ```
 
-Add file [`index.tsx`](./src/index.tsx):
+Add file [`index.tsx`](./src/index.tsx) in the [`src`](./src/) folder:
 
 ```js
 import React from 'react';
@@ -102,7 +101,7 @@ const root = createRoot(container);
 root.render(<App />);
 ```
 
-Add file [`App.tsx`](./src/App.tsx):
+Add file [`App.tsx`](./src/App.tsx) in the [`src`](./src/) folder:
 
 ```js
 import React from 'react';
@@ -117,7 +116,7 @@ export function App(): React.JSX.Element {
 }
 ```
 
-Edit the [`package.json`](./package.json): add `scripts` and `source`:
+Edit the [`package.json`](./package.json) and add the entries for `scripts` and `source`:
 
 ```json
 "source": "src/index.html",
@@ -127,7 +126,7 @@ Edit the [`package.json`](./package.json): add `scripts` and `source`:
 }
 ```
 
-Run the app and check if it available at `http://localhost:1234`:
+Run the app and check if it is available at `http://localhost:1234`:
 
 ```bash
 npm start
@@ -135,7 +134,7 @@ npm start
 
 ## [.gitignore](https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files)
 
-Add files and folders that are not checked in to the [`.gitignore`](./.gitignore):
+Add files and folders that are ignored at check-ins to the [`.gitignore`](./.gitignore) file:
 
 ```
 dist
@@ -146,7 +145,7 @@ node_modules
 
 ## [ESLint](https://eslint.org/)
 
-[ESLint](https://eslint.org/) uses the Airbnb [configuration](eslint-config-airbnb-typescript).
+[ESLint](https://eslint.org/) uses the Airbnb [configuration](https://www.npmjs.com/package/eslint-config-airbnb-typescript).
 
 
 ```bash
@@ -203,7 +202,8 @@ Add `lint` to the [`package.json`](./package.json) `scripts`:
 
 ## Tests
 
-A combination of [Mocha](https://mochajs.org/), [Chai](https://www.chaijs.com/) and the [React Testing Library](https://github.com/testing-library/react-testing-library).
+A combination of [Mocha](https://mochajs.org/), [Chai](https://www.chaijs.com/) and the [React Testing Library](https://github.com/testing-library/react-testing-library) is 
+used for testing.
 
 ```bash
 npm i -D @types/mocha mocha ts-node "@types/chai@^4.3.16" "chai@4.5.0"
@@ -214,7 +214,7 @@ npm i -D cross-env
 npm i -D ts-node
 ```
 
-Add a specific [tsconfig.test.json](./tsconfig.test.json) used by [ts-node](https://github.com/TypeStrong/ts-node):
+Add a specific [tsconfig.test.json](./tsconfig.test.json) that is used by [ts-node](https://github.com/TypeStrong/ts-node):
 
 ```json
 {
