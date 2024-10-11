@@ -3,11 +3,16 @@
   "scripts": {
     "start": "parcel",
     "build": "parcel build",
-    "lint": "npx eslint src test --fix",
+    "_lint": "npx eslint src test",
+    "lint": "npm run _lint -- --fix",
+    "lintAsErrors": "npm run _lint -- --max-warnings=0",
     "test": "cross-env TS_NODE_PROJECT='./tsconfig.test.json' mocha",
     "coverage": "cross-env TS_NODE_PROJECT='./tsconfig.test.json' nyc mocha",
     "selenium": "cross-env TS_NODE_PROJECT='./tsconfig.test.json' nyc mocha --extension=e2e.tsx",
-    "stylelint": "npx stylelint scss/**/*.scss"
+    "_stylelint": "npx stylelint scss/**/*.scss",
+    "stylelint": "npx run _stylelint -- --fix",
+    "stylelintAsErrors": "npx run _stylelint -- --max-warnings=0",
+    "ghtest": "npm ci && npm run lintAsErrors && npm run stylelintAsErrors && npm run build && npm run coverage"
   },
   "devDependencies": {
     "@istanbuljs/nyc-config-typescript": "^1.0.2",

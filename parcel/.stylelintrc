@@ -1,6 +1,5 @@
 {
   "extends": "stylelint-config-sass-guidelines",
-  "fix": true,
   "ignoreFiles": [
     "scss/vendors/**/*.scss"
   ]

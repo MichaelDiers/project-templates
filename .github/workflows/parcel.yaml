@@ -17,15 +17,6 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20.10.0
-      - name: install dependencies
+      - name: run ghtest
         working-directory: 'parcel'
-        run: npm ci
-      - name: build app
-        working-directory: 'parcel'
-        run: npm run build
-      - name: test app
-        working-directory: 'parcel'
-        run: npm run test
-      - name: check code coverage
-        working-directory: 'parcel'
-        run: npm run coverage
+        run: npm run ghtest
