@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { Nav } from '../../src/page-parts/Nav';
+import { Nav } from '../../src/components/Nav';
 
 describe('Nav tests', function appTests() {
   this.timeout(5000);

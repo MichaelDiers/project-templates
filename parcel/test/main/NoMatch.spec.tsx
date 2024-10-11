@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { NoMatch } from '../../src/page-parts/NoMatch';
+import { NoMatch } from '../../src/main/NoMatch';
 
 describe('Footer tests', function appTests() {
   this.timeout(5000);

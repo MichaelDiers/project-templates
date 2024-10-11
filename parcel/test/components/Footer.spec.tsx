@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { Footer } from '../../src/page-parts/Footer';
+import { Footer } from '../../src/components/Footer';
 import { ariaRoleMappings } from '../ariaRoleMappings';
 
 describe('Footer tests', function appTests() {

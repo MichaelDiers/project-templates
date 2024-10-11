@@ -1,0 +1,47 @@
+// https://www.smashingmagazine.com/2024/09/sticky-headers-full-height-elements-tricky-combination/
+
+@use '../abstracts';
+
+body,
+html,
+.app {
+  margin: 0;
+  font-family: 'Instrument Sans', sans-serif;
+  font-weight: medium;
+  font-size: 16px;
+  color: abstracts.$text-color;
+  display: grid;
+  grid-template-rows: min-content 1fr;
+}
+
+.above-the-fold-spacer {
+  height: 100vh;
+  grid-column: 1 / -1;
+  grid-row: 1 / span 2;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  grid-column-start: 1;
+  grid-row-start: 1;
+  padding: 2rem;
+  background-color: abstracts.$header-background;
+  box-shadow:
+    0 4px 6px -1px rgb(0 0 0 / 0.1),
+    0 2px 4px -2px rgb(0 0 0 / 0.1);
+
+}
+
+.hero {
+  padding: 5rem 2rem;
+  grid-column-start: 1;
+  grid-row-start: 2;
+  background-color: abstracts.$hero-background;
+}
+
+.main {
+  min-height: 55rem;
+  padding: 5rem 2rem;
+  background-color: abstracts.$main-background;
+}

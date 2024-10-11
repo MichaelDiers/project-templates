@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { Home } from '../../src/page-parts/Home';
+import { Home } from '../../src/main/Home';
 
 describe('Home tests', function appTests() {
   this.timeout(5000);

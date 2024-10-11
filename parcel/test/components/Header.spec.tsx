@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { Header } from '../../src/page-parts/Header';
+import { Header } from '../../src/components/Header';
 import { ariaRoleMappings } from '../ariaRoleMappings';
 
 describe('Header tests', function appTests() {

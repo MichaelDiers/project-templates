@@ -1,4 +1,23 @@
+// see https://github.com/KittyGiraudel/sass-boilerplate/tree/master
+
 @charset "UTF-8";
 
-// 1. Vendors
 @use 'vendors/normalize';
+
+// 2. Base stuff
+// @use 'base/base';
+// @use 'base/fonts';
+// @use 'base/helpers';
+// @use 'base/typography';
+
+
+// @use 'layout/footer';
+@use 'layout/header';
+
+@use 'components/sticky-header';
+
+// 5. Pages
+// @use 'pages/home';
+
+// 6. Themes
+// @use 'themes/default';
