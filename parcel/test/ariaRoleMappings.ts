@@ -1,4 +1,4 @@
 export const ariaRoleMappings = {
   footer: 'contentinfo',
-  header: 'banner'
-}
+  header: 'banner',
+};
