@@ -212,8 +212,7 @@ used for testing.
 ```bash
 npm i -D @types/mocha mocha ts-node "@types/chai@^4.3.16" "chai@4.5.0"
 npm i -D @testing-library/react @testing-library/dom
-npm i -D jsdom @types/jsdom
-npm i -D jsdom-global @types/jsdom-global
+npm i -D jsdom @types/jsdom global-jsdom
 npm i -D cross-env
 npm i -D ts-node
 ```
@@ -240,7 +239,8 @@ Add the mocha configuration file [.mocharc.json](./.mocharc.json):
     "tsx"
   ],
   "require": [
-    "ts-node/register"
+    "ts-node/register",
+    "global-jsdom/register"
   ],
   "recursive": true
 }

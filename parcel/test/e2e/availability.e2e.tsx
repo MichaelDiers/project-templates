@@ -21,7 +21,7 @@ browsers.forEach((browser) => {
     it('ensure sign in page loads by default', async () => {
       await driver.get(urls.local);
 
-      const element = await driver.findElement(By.css('h1'));
+      const element = await driver.findElement(By.css('main h1'));
       expect(element).not.be.null;
 
       const text = await element!.getText();
