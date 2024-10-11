@@ -9,10 +9,6 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Install libc tool
-        run: |
-          sudo apt-get update
-          sudo apt-get install libc6
       - name: checkout source
         uses: actions/checkout@v4
         with:
@@ -23,4 +19,4 @@ jobs:
           node-version: 20.10.0
       - name: run ghtest
         working-directory: 'parcel'
-        run: npm run ghtest
+        run: npm ci && npm i -D RUN npm install @parcel/watcher && npm run lintAsErrors && npm run stylelintAsErrors && npm run build && npm run coverage
