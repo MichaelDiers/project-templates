@@ -14,6 +14,9 @@ jobs:
         with:
           sparse-checkout: 'parcel'
           sparse-checkout-cone-mode: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20.10.0
       - name: install dependencies
         working-directory: 'parcel'
         run: npm i
