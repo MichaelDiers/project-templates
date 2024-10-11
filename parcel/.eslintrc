@@ -17,7 +17,9 @@
       {
         "assert": "htmlFor"
       }
-    ]
+    ],
+    // https://sophiabits.com/blog/stop-using-defaultprops
+    "react/require-default-props": "off"
   },
   "overrides": [
     {
