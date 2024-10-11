@@ -11,17 +11,17 @@ jobs:
     steps:
       - name: checkout source
         uses: actions/checkout@v4
-          sparse-checkout: parcel
+          sparse-checkout: 'parcel'
           sparse-checkout-cone-mode: false
       - name: install dependencies
-        working-directory: parcel
+        working-directory: 'parcel'
         run: npm i
       - name: build app
-        working-directory: parcel
+        working-directory: 'parcel'
         run: npm run build
       - name: test app
-        working-directory: parcel
+        working-directory: 'parcel'
         run: npm run test
       - name: check code coverage
-        working-directory: parcel
+        working-directory: 'parcel'
         run: npm run coverage
