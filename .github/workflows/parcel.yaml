@@ -11,6 +11,7 @@ jobs:
     steps:
       - name: checkout source
         uses: actions/checkout@v4
+        with:
           sparse-checkout: 'parcel'
           sparse-checkout-cone-mode: false
       - name: install dependencies
