@@ -19,7 +19,7 @@ jobs:
           node-version: 20.10.0
       - name: install dependencies
         working-directory: 'parcel'
-        run: npm i
+        run: npm ci
       - name: build app
         working-directory: 'parcel'
         run: npm run build
