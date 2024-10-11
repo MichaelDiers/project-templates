@@ -8,7 +8,7 @@
     "lintAsErrors": "npm run _lint -- --max-warnings=0",
     "test": "cross-env TS_NODE_PROJECT='./tsconfig.test.json' mocha",
     "coverage": "cross-env TS_NODE_PROJECT='./tsconfig.test.json' nyc mocha",
-    "selenium": "cross-env TS_NODE_PROJECT='./tsconfig.test.json' nyc mocha --extension=e2e.tsx",
+    "selenium": "cross-env TS_NODE_PROJECT='./tsconfig.test.json' mocha --extension=e2e.tsx",
     "_stylelint": "npx stylelint scss",
     "stylelint": "npm run _stylelint -- --fix",
     "stylelintAsErrors": "npm run _stylelint -- --max-warnings=0"
