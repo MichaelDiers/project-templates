@@ -19,4 +19,4 @@ jobs:
           node-version: 20.10.0
       - name: run ghtest
         working-directory: 'parcel'
-        run: npm ci && npm i -D RUN npm install @parcel/watcher && npm run lintAsErrors && npm run stylelintAsErrors && npm run build && npm run coverage
+        run: npm ci && npm i -D @parcel/watcher && npm run lintAsErrors && npm run stylelintAsErrors && npm run build && npm run coverage
