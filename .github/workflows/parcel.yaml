@@ -5,6 +5,9 @@ on:
       - parcel/**
       - .github/workflows/parcel.yaml
   workflow_dispatch:
+env:
+  node-version: 20.10.0
+  working-directory: 'parcel'
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -12,11 +15,23 @@ jobs:
       - name: checkout source
         uses: actions/checkout@v4
         with:
-          sparse-checkout: 'parcel'
+          sparse-checkout: ${{ env.working-directory }}
           sparse-checkout-cone-mode: false
       - uses: actions/setup-node@v4
         with:
-          node-version: 20.10.0
-      - name: run ghtest
-        working-directory: 'parcel'
-        run: npm ci && npm run lintAsErrors && npm run stylelintAsErrors && npm run build && npm run coverage
+          node-version: ${{ env.node-version }}
+      - name: install packages
+        working-directory: ${{ env.working-directory }}
+        run: npm ci
+      - name: eslint
+        working-directory: ${{ env.working-directory }}
+        run: npm run lintAsErrors
+      - name: stylelint
+        working-directory: ${{ env.working-directory }}
+        run: npm run stylelintAsErrors
+      - name: build
+        working-directory: ${{ env.working-directory }}
+        run: npm run build
+      - name: tests and code coverage
+        working-directory: ${{ env.working-directory }}
+        run: npm run coverage
