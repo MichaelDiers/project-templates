@@ -1,0 +1,27 @@
+name: Parcel
+on:
+  push:
+    paths:
+      - parcel/**
+      - .github/workflows/parcel.yaml
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout source
+        uses: actions/checkout@v4
+          sparse-checkout: parcel
+          sparse-checkout-cone-mode: false
+      - name: install dependencies
+        working-directory: parcel
+        run: npm i
+      - name: build app
+        working-directory: parcel
+        run: npm run build
+      - name: test app
+        working-directory: parcel
+        run: npm run test
+      - name: check code coverage
+        working-directory: parcel
+        run: npm run coverage
