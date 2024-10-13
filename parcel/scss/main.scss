@@ -4,14 +4,9 @@
 
 @use 'vendors/normalize';
 
-// 2. Base stuff
-// @use 'base/base';
-// @use 'base/fonts';
-// @use 'base/helpers';
-// @use 'base/typography';
+@use 'base/fonts';
+@use 'base/_typography';
 
-
-// @use 'layout/footer';
 @use 'layout/header';
 
 @use 'components/sticky-header';

@@ -3,3 +3,9 @@ $hero-background: #a1a7f4;
 $main-background: #c9d2fa;
 
 $text-color: #1a1228;
+
+$text-montserrat: 'Montserrat';
+
+/// Regular font family
+/// @type List
+$text-font-stack: $text-montserrat, 'Helvetica', 'Arial', sans-serif !default;

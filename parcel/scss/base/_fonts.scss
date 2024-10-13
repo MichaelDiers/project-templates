@@ -1,0 +1,6 @@
+@use '../abstracts';
+
+@font-face {
+  font-family: abstracts.$text-montserrat;
+  src: abstracts.font('Montserrat/static/Montserrat-Regular.ttf');
+}
