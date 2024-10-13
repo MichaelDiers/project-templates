@@ -1,7 +1,7 @@
 import React from 'react';
 
 export function Header({
-  className = '',
+  className = 'header',
 }: {
   className?: string
 }): React.JSX.Element {
