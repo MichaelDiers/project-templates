@@ -8,7 +8,7 @@ export function Layout(): React.JSX.Element {
   return (
     <>
       <Header />
-      <Main >
+      <Main>
         <Outlet />
       </Main>
       <Footer />

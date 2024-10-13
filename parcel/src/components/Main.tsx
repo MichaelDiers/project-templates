@@ -2,7 +2,7 @@ import React from 'react';
 
 export function Main({
   className = 'main',
-  children
+  children,
 }: {
   className?: string,
   children: React.ReactNode
