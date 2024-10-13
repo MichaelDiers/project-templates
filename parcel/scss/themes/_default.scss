@@ -1,0 +1,20 @@
+@use '../abstracts';
+
+body {
+  color: abstracts.$text-color;
+}
+
+.header {
+  background-color: abstracts.$header-background;
+  box-shadow:
+    0 4px 6px -1px rgb(0 0 0 / 0.1),
+    0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.hero {
+  background-color: abstracts.$hero-background;
+}
+
+.main {
+  background-color: abstracts.$main-background;
+}
